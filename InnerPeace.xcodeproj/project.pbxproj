@@ -14,6 +14,8 @@
 		54F17BEA243F3376004F6E1D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54F17BE9243F3376004F6E1D /* Assets.xcassets */; };
 		54F17BED243F3376004F6E1D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54F17BEB243F3376004F6E1D /* LaunchScreen.storyboard */; };
 		54F17BF8243F3376004F6E1D /* InnerPeaceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F17BF7243F3376004F6E1D /* InnerPeaceTests.swift */; };
+		54F17C04243F35EF004F6E1D /* quotes.json in Resources */ = {isa = PBXBuildFile; fileRef = 54F17C02243F35EF004F6E1D /* quotes.json */; };
+		54F17C05243F35EF004F6E1D /* pictures.json in Resources */ = {isa = PBXBuildFile; fileRef = 54F17C03243F35EF004F6E1D /* pictures.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +40,8 @@
 		54F17BF3243F3376004F6E1D /* InnerPeaceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InnerPeaceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		54F17BF7243F3376004F6E1D /* InnerPeaceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InnerPeaceTests.swift; sourceTree = "<group>"; };
 		54F17BF9243F3376004F6E1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		54F17C02243F35EF004F6E1D /* quotes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = quotes.json; sourceTree = "<group>"; };
+		54F17C03243F35EF004F6E1D /* pictures.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = pictures.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +87,8 @@
 				54F17BE2243F336E004F6E1D /* SceneDelegate.swift */,
 				54F17BE4243F336E004F6E1D /* ViewController.swift */,
 				54F17BE6243F336E004F6E1D /* Main.storyboard */,
+				54F17C03243F35EF004F6E1D /* pictures.json */,
+				54F17C02243F35EF004F6E1D /* quotes.json */,
 				54F17BE9243F3376004F6E1D /* Assets.xcassets */,
 				54F17BEB243F3376004F6E1D /* LaunchScreen.storyboard */,
 				54F17BEE243F3376004F6E1D /* Info.plist */,
@@ -180,9 +186,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				54F17C04243F35EF004F6E1D /* quotes.json in Resources */,
 				54F17BED243F3376004F6E1D /* LaunchScreen.storyboard in Resources */,
 				54F17BEA243F3376004F6E1D /* Assets.xcassets in Resources */,
 				54F17BE8243F336E004F6E1D /* Main.storyboard in Resources */,
+				54F17C05243F35EF004F6E1D /* pictures.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -372,7 +380,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ashutosh.InnerPeace;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
@@ -390,7 +398,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ashutosh.InnerPeace;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};
