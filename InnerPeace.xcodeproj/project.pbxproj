@@ -16,6 +16,8 @@
 		54F17BF8243F3376004F6E1D /* InnerPeaceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F17BF7243F3376004F6E1D /* InnerPeaceTests.swift */; };
 		54F17C04243F35EF004F6E1D /* quotes.json in Resources */ = {isa = PBXBuildFile; fileRef = 54F17C02243F35EF004F6E1D /* quotes.json */; };
 		54F17C05243F35EF004F6E1D /* pictures.json in Resources */ = {isa = PBXBuildFile; fileRef = 54F17C03243F35EF004F6E1D /* pictures.json */; };
+		54F17C07243F3666004F6E1D /* Bundle-Decoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F17C06243F3666004F6E1D /* Bundle-Decoding.swift */; };
+		54F17C09243F3763004F6E1D /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F17C08243F3763004F6E1D /* Quote.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +44,8 @@
 		54F17BF9243F3376004F6E1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		54F17C02243F35EF004F6E1D /* quotes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = quotes.json; sourceTree = "<group>"; };
 		54F17C03243F35EF004F6E1D /* pictures.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = pictures.json; sourceTree = "<group>"; };
+		54F17C06243F3666004F6E1D /* Bundle-Decoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle-Decoding.swift"; sourceTree = "<group>"; };
+		54F17C08243F3763004F6E1D /* Quote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +94,8 @@
 				54F17C03243F35EF004F6E1D /* pictures.json */,
 				54F17C02243F35EF004F6E1D /* quotes.json */,
 				54F17BE9243F3376004F6E1D /* Assets.xcassets */,
+				54F17C06243F3666004F6E1D /* Bundle-Decoding.swift */,
+				54F17C08243F3763004F6E1D /* Quote.swift */,
 				54F17BEB243F3376004F6E1D /* LaunchScreen.storyboard */,
 				54F17BEE243F3376004F6E1D /* Info.plist */,
 			);
@@ -208,6 +214,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				54F17C09243F3763004F6E1D /* Quote.swift in Sources */,
+				54F17C07243F3666004F6E1D /* Bundle-Decoding.swift in Sources */,
 				54F17BE5243F336E004F6E1D /* ViewController.swift in Sources */,
 				54F17BE1243F336E004F6E1D /* AppDelegate.swift in Sources */,
 				54F17BE3243F336E004F6E1D /* SceneDelegate.swift in Sources */,
@@ -380,7 +388,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ashutosh.InnerPeace;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 2;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -398,7 +406,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ashutosh.InnerPeace;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 2;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
