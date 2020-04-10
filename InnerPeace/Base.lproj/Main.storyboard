@@ -21,13 +21,29 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MrJ-U9-spN">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2D0-1o-qJI">
+                                <rect key="frame" x="279" y="20" width="80" height="44"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.64635059931506855" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="9GK-1U-wrN"/>
+                                    <constraint firstAttribute="width" constant="80" id="LTz-ZD-j8A"/>
+                                </constraints>
+                                <state key="normal" title="Share">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="shareTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Jbu-he-mNJ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="afK-0v-KRs" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="2eC-Aj-dgs"/>
                             <constraint firstItem="MrJ-U9-spN" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="DSI-9n-4Pd"/>
                             <constraint firstItem="afK-0v-KRs" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Hcy-k8-3YM"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="2D0-1o-qJI" secondAttribute="trailing" constant="16" id="J5g-jB-CzY"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="MrJ-U9-spN" secondAttribute="bottom" id="Oc7-JF-Elz"/>
+                            <constraint firstItem="2D0-1o-qJI" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="QA5-z2-HKP"/>
                             <constraint firstItem="MrJ-U9-spN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="SFP-2g-s5X"/>
                             <constraint firstAttribute="bottom" secondItem="afK-0v-KRs" secondAttribute="bottom" id="W3Y-Mn-dZE"/>
                             <constraint firstAttribute="trailing" secondItem="afK-0v-KRs" secondAttribute="trailing" id="fT2-om-2Mj"/>
@@ -42,7 +58,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="132" y="139"/>
+            <point key="canvasLocation" x="132" y="138.98050974512745"/>
         </scene>
     </scenes>
 </document>

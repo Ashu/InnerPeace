@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import UserNotifications
 
 class ViewController: UIViewController {
 	@IBOutlet weak var background: UIImageView!
@@ -14,10 +15,16 @@ class ViewController: UIViewController {
 	
 	let quotes = Bundle.main.decode([Quote].self, from: "quotes.json")
 	let images = Bundle.main.decode([String].self, from: "pictures.json")
+	var shareQuote: Quote?
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
+		UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound]) { (allowed, error) in
+			if allowed {
+				self.configureAlerts()
+			}
+		}
 	}
 	
 	func updateQuote() {
@@ -31,6 +38,7 @@ class ViewController: UIViewController {
 			fatalError("Unable to read a quote.")
 		}
 		
+		shareQuote = selectedQuote
 		
 		let insetAmount: CGFloat = 250
 		let drawBounds = quote.bounds.inset(by: UIEdgeInsets(top: insetAmount, left: insetAmount, bottom: insetAmount, right: insetAmount))
@@ -78,5 +86,51 @@ class ViewController: UIViewController {
 		updateQuote()
 	}
 
+	@IBAction func shareTapped(_ sender: UIButton) {
+		guard let quote = shareQuote else {
+			fatalError("Attempting to share a non-existent quote.")
+		}
+		
+		let shareMessge = "\"\(quote.text)\" — \(quote.author)"
+		
+		let ac = UIActivityViewController(activityItems: [shareMessge], applicationActivities: nil)
+		ac.popoverPresentationController?.sourceView = sender
+		
+		present(ac, animated: true, completion: nil)
+	}
+	
+	func configureAlerts() {
+		let center = UNUserNotificationCenter.current()
+		
+		center.removeAllDeliveredNotifications()
+		center.removeAllPendingNotificationRequests()
+		
+		let shuffled = quotes.shuffled()
+		
+		for i in 1...7 {
+			let content = UNMutableNotificationContent()
+			content.title = "Inner Peace"
+			content.body = shuffled[i].text
+			
+			var dateComponents = DateComponents()
+			dateComponents.day = i
+			
+			if let alertDate = Calendar.current.date(byAdding: dateComponents, to: Date()) {
+				var alertComponents = Calendar.current.dateComponents([.day, .month, .year], from: alertDate)
+				alertComponents.hour = 10
+				
+//				 let trigger = UNCalendarNotificationTrigger(dateMatching: alertComponents, repeats: false)
+				
+				let trigger = UNTimeIntervalNotificationTrigger(timeInterval: TimeInterval(i) * 5, repeats: false)
+				let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+				
+				center.add(request) { (error) in
+					if let error = error {
+						print(error.localizedDescription)
+					}
+				}
+			}
+		}
+	}
 }
 
