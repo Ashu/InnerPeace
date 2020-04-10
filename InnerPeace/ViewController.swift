@@ -39,7 +39,10 @@ class ViewController: UIViewController {
 		}
 		
 		shareQuote = selectedQuote
-		
+		quote.image = render(selectedQuote: selectedQuote)
+	}
+	
+	func render(selectedQuote: Quote) -> UIImage {
 		let insetAmount: CGFloat = 250
 		let drawBounds = quote.bounds.inset(by: UIEdgeInsets(top: insetAmount, left: insetAmount, bottom: insetAmount, right: insetAmount))
 		
@@ -68,7 +71,7 @@ class ViewController: UIViewController {
 		format.opaque = false
 		let renderer = UIGraphicsImageRenderer(bounds: quoteRect.insetBy(dx: -30, dy: -30), format: format)
 		
-		quote.image = renderer.image { ctx in
+		return renderer.image { ctx in
 			for i in 1...5 {
 				ctx.cgContext.setShadow(offset: .zero, blur: CGFloat(i * 2), color: UIColor.black.cgColor)
 				str.draw(in: quoteRect)
@@ -91,9 +94,7 @@ class ViewController: UIViewController {
 			fatalError("Attempting to share a non-existent quote.")
 		}
 		
-		let shareMessge = "\"\(quote.text)\" — \(quote.author)"
-		
-		let ac = UIActivityViewController(activityItems: [shareMessge], applicationActivities: nil)
+		let ac = UIActivityViewController(activityItems: [quote.shareMessge], applicationActivities: nil)
 		ac.popoverPresentationController?.sourceView = sender
 		
 		present(ac, animated: true, completion: nil)
@@ -112,24 +113,21 @@ class ViewController: UIViewController {
 			content.title = "Inner Peace"
 			content.body = shuffled[i].text
 			
-			var dateComponents = DateComponents()
-			dateComponents.day = i
-			
-			if let alertDate = Calendar.current.date(byAdding: dateComponents, to: Date()) {
-				var alertComponents = Calendar.current.dateComponents([.day, .month, .year], from: alertDate)
-				alertComponents.hour = 10
+			let alertDate = Date().byAdding(days: i)
+			var alertComponents = Calendar.current.dateComponents([.day, .month, .year], from: alertDate)
+			alertComponents.hour = 10
 				
 //				 let trigger = UNCalendarNotificationTrigger(dateMatching: alertComponents, repeats: false)
 				
-				let trigger = UNTimeIntervalNotificationTrigger(timeInterval: TimeInterval(i) * 5, repeats: false)
-				let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
-				
-				center.add(request) { (error) in
-					if let error = error {
-						print(error.localizedDescription)
-					}
+			let trigger = UNTimeIntervalNotificationTrigger(timeInterval: TimeInterval(i) * 5, repeats: false)
+			let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+			
+			center.add(request) { (error) in
+				if let error = error {
+					print(error.localizedDescription)
 				}
 			}
+			
 		}
 	}
 }

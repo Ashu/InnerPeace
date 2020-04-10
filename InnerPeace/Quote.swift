@@ -11,4 +11,8 @@ import Foundation
 struct Quote: Codable {
 	var text: String
 	var author: String
+	
+	var shareMessge: String {
+		return "\"\(text)\" — \(author)"
+	}
 }
